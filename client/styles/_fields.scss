@@ -1,0 +1,47 @@
+.qc-field {
+  label{
+    /* Search:: */
+    font-family: Montserrat-Bold;
+    font-size: 18px;
+    color: $secondary;
+  }
+  input{
+    /* Rectangle 6: */
+    border: 1px solid $primary;
+    height: 50px;
+    width: 300px;
+    /* JS, JAVA, HTML, CSS,: */
+    font-family: Montserrat-Regular;
+    font-size: 18px;
+    color: #3C3E66;
+    text-align: center;
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.qc-checkbox{
+  font-family: San-Francisco-Display-Regular;
+  font-size: 14px;
+  color: #4A4A4A;
+}
+
+.search {
+  input{
+    width: 444px;
+  }
+}
+
+/*search field styles*/
+.qc-search-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: -70px;
+  section {
+    display: flex;
+    justify-content: center;
+  }
+}

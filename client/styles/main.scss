@@ -1,0 +1,17 @@
+@import "reset";
+@import "vars";
+@import "fonts";
+
+@import "buttons";
+@import "fields";
+@import "legend";
+@import "footer";
+@import "header";
+@import "list";
+
+html, body{
+  font-family: Montserrat-Regular;
+}
+*{
+  margin: 5px;
+}

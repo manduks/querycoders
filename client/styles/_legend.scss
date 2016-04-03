@@ -1,0 +1,18 @@
+.qc-legend{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  img{
+    width: 128px;
+    height: 104px;
+  }
+  section{
+    font-family: San-Francisco-Display-Thin;
+    font-size: 24px;
+    color: $secondary;
+    margin-top: 23px;
+    b{
+      color: $primary;
+    }
+  }
+}

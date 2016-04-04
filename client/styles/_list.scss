@@ -1,7 +1,55 @@
 .qc-items-list {
   display: flex;
-  height: 100vh;
-  border: 1px solid red;
+  align-items: center;
+  justify-content: center;
+  flex-wrap:wrap;
+  font-family: Montserrat-Regular;
+  //height: 100vh;
+  //border: 1px solid red;
   width: 1024px;
   margin: auto;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+  .qc-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $gray;
+    margin: 15px;
+    width: 200px;
+    height: 260px;
+    .qc-item-info {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      font-size: 14px;
+      color: $secondary;
+      .qc-item-email {
+        font-size: 10px;
+        font-family: San-Francisco-Display-Regular;
+        color: lighten($secondary, 30);
+      }
+    }
+    .qc-item-details {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 30px;
+      width: 80%;
+      font-size: 24px;
+      .qc-item-score {
+        //font-size: 10px;
+        color: #D93059;
+      }
+      .qc-item-star {
+        width: 24px;
+        height: 24px;
+        color: #000;
+        cursor: pointer;
+      }
+    }
+  }
 }

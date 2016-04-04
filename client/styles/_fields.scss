@@ -1,4 +1,7 @@
 .qc-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   label{
     /* Search:: */
     font-family: Montserrat-Bold;

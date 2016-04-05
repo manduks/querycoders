@@ -20,6 +20,10 @@ export default class App extends Component {
         <Legend/>
         <SearchField/>
         <Coders/>
+        <section className="qc-go-pro">
+          <span >WANT MORE ?</span>
+          <Button text="GO PRO"/>
+        </section>
         <Footer/>
       </div>
     );

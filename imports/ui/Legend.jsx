@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-
+import { browserHistory } from 'react-router';
 
 export default class Legend extends Component {
   onClick() {
-    alert(234234);
+    browserHistory.push('/');
   }
 
   render() {
     return (
-      <section className="qc-legend" onClick={this.onClick}>
+      <section className="qc-legend" onClick={this.onClick.bind(this)}>
         <img src="./img/logo.svg"/>
         <section> <b>Query</b> the right <b>Coders</b> for your project</section>
       </section>

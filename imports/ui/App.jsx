@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-
-
-import Button from './components/Button.jsx';
-import Field from './components/Field.jsx';
-import Checkbox from './components/Checkbox.jsx';
-
+import { browserHistory } from 'react-router';
+/* Import components*/
 import Header from './Header.jsx';
 import Legend from './Legend.jsx';
 import SearchField from './components/SearchField.jsx';
+import Button from './components/Button.jsx';
 import Coders from './Coders.jsx';
 import Footer from './Footer.jsx';
 
 // App component - represents the whole app
 export default class App extends Component {
+  goToPay() {
+    browserHistory.push('/pay');
+  }
   render() {
     return (
       <div className="container">
@@ -22,7 +22,7 @@ export default class App extends Component {
         <Coders/>
         <section className="qc-go-pro">
           <span >WANT MORE ?</span>
-          <Button text="GO PRO"/>
+          <Button text="GO PRO" onClick={this.goToPay}/>
         </section>
         <Footer/>
       </div>

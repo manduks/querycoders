@@ -5,7 +5,7 @@ import Checkbox from './Checkbox.jsx';
 
 export default class SearchField extends Component {
   onClick() {
-    alert(234234);
+     Meteor.call('github.find', 'Oaxaca');
   }
 
   render() {
@@ -13,8 +13,7 @@ export default class SearchField extends Component {
       <div className='qc-search-field'>
         <Field  placeHolder="JS, JAVA, HTML ..." labelText= "Search" type="search"/>
         <section>
-          <Checkbox labelText= "Skills"/>
-          <Checkbox labelText= "Location"/>
+          <Checkbox labelText= "Near my location" defaultChecked={false} onClick={this.onClick.bind(this)}/>
         </section>
       </div>
     );

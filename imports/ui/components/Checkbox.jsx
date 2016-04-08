@@ -2,15 +2,16 @@ import React, { Component, PropTypes } from 'react';
 
 
 export default class Checkbox extends Component {
-  onClick() {
-    alert(234234);
-  }
-
   render() {
+    const { labelText, ...other } = this.props;
+    
     return (
       <div className="qc-checkbox">
-        <input type="checkbox" autoComplete="off" onClick={this.onClick}/>
-        <label>{this.props.labelText} </label>
+        <input
+          type="checkbox"
+          {...other}
+          />
+        <label>{labelText} </label>
       </div>
     );
   }

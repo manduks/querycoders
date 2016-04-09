@@ -3,25 +3,26 @@ import Coder from './Coder.jsx';
 
 export default class Coders extends Component {
   getCoders() {
-    return [
-      { _id: 1, email: 'armando@codetlan.com', name: 'Armando Gonzalez' },
-      { _id: 2, email: 'armando@codetlan.com', name: 'Peter Anguila' },
-      { _id: 3, email: 'armando@codetlan.com', name: 'Awesome Perez' },
-      { _id: 4, email: 'armando@codetlan.com', name: 'Armando Gonzalez' },
-      { _id: 5, email: 'armando@codetlan.com', name: 'Peter Anguila' },
-      { _id: 6, email: 'armando@codetlan.com', name: 'Awesome Perez' },
-      { _id: 11, email: 'armando@codetlan.com', name: 'Armando Gonzalez' },
-      { _id: 12, email: 'armando@codetlan.com', name: 'Peter Anguila' },
-      { _id: 13, email: 'armando@codetlan.com', name: 'Awesome Perez' },
-      { _id: 14, email: 'armando@codetlan.com', name: 'Armando Gonzalez' },
-      { _id: 15, email: 'armando@codetlan.com', name: 'Peter Anguila' },
-      { _id: 16, email: 'armando@codetlan.com', name: 'Awesome Perez' }
+    const data = this.props.data;
+    return data.length ? data : [
+      { id: 1, email: 'armando@codetlan.com', login: 'Armando Gonzalez', avatar_url:"./img/coder.png", score:10, html_url:'https://github.com/manduks' },
+      { id: 2, email: 'armando@codetlan.com', login: 'Peter Anguila', avatar_url:"./img/coder.png", score:10, html_url:'https://github.com/manduks' },
+      { id: 3, email: 'armando@codetlan.com', login: 'Awesome Perez', avatar_url:"./img/coder.png", score:10, html_url:'https://github.com/manduks' },
+      { id: 4, email: 'armando@codetlan.com', login: 'Armando Gonzalez', avatar_url:"./img/coder.png", score:10, html_url:'https://github.com/manduks' },
+      { id: 5, email: 'armando@codetlan.com', login: 'Peter Anguila', avatar_url:"./img/coder.png", score:10, html_url:'https://github.com/manduks' },
+      { id: 6, email: 'armando@codetlan.com', login: 'Awesome Perez', avatar_url:"./img/coder.png", score:10, html_url:'https://github.com/manduks' },
+      { id: 11, email: 'armando@codetlan.com', login: 'Armando Gonzalez', avatar_url:"./img/coder.png", score:10, html_url:'https://github.com/manduks' },
+      { id: 12, email: 'armando@codetlan.com', login: 'Peter Anguila', avatar_url:"./img/coder.png", score:10, html_url:'https://github.com/manduks' },
+      { id: 13, email: 'armando@codetlan.com', login: 'Awesome Perez', avatar_url:"./img/coder.png", score:10, html_url:'https://github.com/manduks' },
+      { id: 14, email: 'armando@codetlan.com', login: 'Armando Gonzalez', avatar_url:"./img/coder.png", score:10, html_url:'https://github.com/manduks' },
+      { id: 15, email: 'armando@codetlan.com', login: 'Peter Anguila', avatar_url:"./img/coder.png", score:10, html_url:'https://github.com/manduks' },
+      { id: 16, email: 'armando@codetlan.com', login: 'Awesome Perez', avatar_url:"./img/coder.png", score:10, html_url:'https://github.com/manduks' }
     ];
   }
 
   renderCoders() {
     return this.getCoders().map((coder) => (
-      <Coder key={coder._id} coder={coder} />
+      <Coder key={coder.id} coder={coder} />
     ));
   }
 

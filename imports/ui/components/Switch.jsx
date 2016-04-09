@@ -5,13 +5,17 @@ export default class Switch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      checked: this.props.defaultChecked,
+      value: this.props.defaultChecked,
     };
   }
-  onChangeSwitch() {
-    this.setState({'checked': !this.state.checked});
-    this.props.onChange(this, this.state.checked);
+
+  onChange() {
+    this.setState({'value': !this.state.value});
+    if (this.props.onChange) {
+      this.props.onChange(this, this.state.value);
+    }
   }
+
   render() {
     const { ref, ...other } = this.props;
     return (
@@ -23,7 +27,7 @@ export default class Switch extends Component {
           id="myonoffswitch"
           ref="checkbox"
           {...other}
-          onChange={this.onChangeSwitch.bind(this)}
+          onChange={this.onChange.bind(this)}
         />
         <label className="onoffswitch-label" htmlFor="myonoffswitch">
               <span className="onoffswitch-inner"></span>
@@ -33,7 +37,3 @@ export default class Switch extends Component {
     );
   }
 }
-
-Switch.propTypes = {
-  onChange: PropTypes.func.isRequired
-};

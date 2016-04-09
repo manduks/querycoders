@@ -12,21 +12,27 @@ import Footer from './Footer.jsx';
 export default class App extends Component {
   constructor() {
    super();
-   this.render = this.render.bind(this);
+   this.state = {
+     resultData: [],
+   };
   }
   goToPay() {
     browserHistory.push('/pay');
   }
-  onChangeSeachField() {
-    console.log(arguments);
+  searchForCoders(component, values) {
+    const self = this;
+    Meteor.call('github.find', values, function (err, data) {
+      console.log(data);
+      self.setState({resultData: data.items});
+    });
   }
   render() {
     return (
       <div className="container">
         <Header/>
         <Legend/>
-        <SearchField onChange={this.onChangeSeachField.bind(this)}/>
-        <Coders/>
+        <SearchField onSearch={this.searchForCoders.bind(this)}/>
+        <Coders data={this.state.resultData}/>
         <section className="qc-go-pro">
           <span >WANT MORE ?</span>
           <Button text="GO PRO $9.00" onClick={this.goToPay}/>

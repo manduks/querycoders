@@ -2,8 +2,15 @@ import React, { Component, PropTypes } from 'react';
 
 
 export default class Field extends Component {
-  onClick() {
-    alert(234234);
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: this.props.value || '',
+    };
+  }
+
+  onChange() {
+    this.setState({'value': this.refs.field.value});
   }
 
   render() {
@@ -11,7 +18,7 @@ export default class Field extends Component {
     return (
       <div className={className}>
         <label>{this.props.labelText} :</label>
-        <input type="text" autoComplete="off" placeholder={this.props.placeHolder}/>
+        <input type="text" autoComplete="off" ref="field" placeholder={this.props.placeHolder} onChange={this.onChange.bind(this)}/>
       </div>
     );
   }

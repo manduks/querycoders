@@ -7,23 +7,29 @@ import Button from './Button.jsx';
 
 
 export default class SearchField extends Component {
-  onChangeSwitch(switchComponent) {
-    console.log(arguments);
-     this.props.onChange(this, {});
+  onChangeSwitch(switchComponent) {}
+
+  onSearch() {
+    const values = {
+      switchValue: this.refs.switch.state.value,
+      fieldValue : this.refs.field.state.value,
+    };
+    this.setState(values);
+    this.props.onSearch(this, values);
   }
 
   render() {
     return (
       <div className='qc-search-field'>
-        <Field  placeHolder="JS, JAVA, HTML ..." labelText= "Search" type="search"/>
+        <Field  ref="field" placeHolder="JS, JAVA, HTML ..." labelText= "Search" type="search"/>
         <section>
-          <Switch ref="location" onChange={this.onChangeSwitch.bind(this)} defaultChecked={true}/>
-          <Button text="Search" type="action" />
+          <Switch ref="location" ref="switch" onChange={this.onChangeSwitch} defaultChecked={true}/>
+          <Button text="Search" type="action" onClick={this.onSearch.bind(this)}/>
         </section>
       </div>
     );
   }
 }
 SearchField.propTypes = {
-  onChange: PropTypes.func.isRequired
+  onSearch: PropTypes.func.isRequired
 };

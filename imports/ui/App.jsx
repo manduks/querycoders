@@ -35,7 +35,7 @@ export default class App extends Component {
         <Coders data={this.state.resultData}/>
         <section className="qc-go-pro">
           <span >WANT MORE ?</span>
-          <Button text="GO PRO $9.00" onClick={this.goToPay}/>
+          <Button text="GO PRO" onClick={this.goToPay}/>
         </section>
         <Footer/>
       </div>

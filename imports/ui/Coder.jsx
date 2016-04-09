@@ -9,7 +9,7 @@ export default class Coder extends Component {
 
   render() {
     const coder = this.props.coder;
-    //coder.email = 'armando@codetlan.com';
+    coder.email = 'armando@codetlan.com';
     return (
       <li className="qc-item">
         <img src={coder.avatar_url} onClick={this.redirectToGithubProfile.bind(this)}/>

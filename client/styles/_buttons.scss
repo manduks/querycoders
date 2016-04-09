@@ -17,6 +17,22 @@
 .login {
   color: $primary;
   background: $white;
-  width: 120px;
+  font-size: 16px;
   border: 0px;
+  width: 120px;
+}
+
+.action {
+  color:$text-gray;
+  background: $white;
+  width: 112px;
+  height: 30px;
+  border: 1px solid $light-gray;
+  background: $light-gray;
+  font-family: Montserrat-Regular;
+  font-size: 12px;
+  &:hover {
+    color: $primary;
+    border: 1px solid $gray;
+  }
 }

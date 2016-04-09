@@ -16,7 +16,7 @@
     /* JS, JAVA, HTML, CSS,: */
     font-family: Montserrat-Regular;
     font-size: 18px;
-    color: #3C3E66;
+    color: $text-gray;
     text-align: center;
     &:focus {
       outline: 0;
@@ -43,8 +43,15 @@
   align-items: center;
   margin-top: 30px;
   margin-left: -70px;
+  margin-bottom: 10px;
   section {
     display: flex;
-    justify-content: center;
+    width: 447px;
+    margin-left: 73px;
+    justify-content:center;
+    margin-top: 8px;
+    .onoffswitch {
+      margin-right: 10px;
+    }
   }
 }

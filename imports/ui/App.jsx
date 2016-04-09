@@ -10,15 +10,22 @@ import Footer from './Footer.jsx';
 
 // App component - represents the whole app
 export default class App extends Component {
+  constructor() {
+   super();
+   this.render = this.render.bind(this);
+  }
   goToPay() {
     browserHistory.push('/pay');
+  }
+  onChangeSeachField() {
+    console.log(arguments);
   }
   render() {
     return (
       <div className="container">
         <Header/>
         <Legend/>
-        <SearchField/>
+        <SearchField onChange={this.onChangeSeachField.bind(this)}/>
         <Coders/>
         <section className="qc-go-pro">
           <span >WANT MORE ?</span>

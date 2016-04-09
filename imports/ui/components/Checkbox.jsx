@@ -3,8 +3,7 @@ import React, { Component, PropTypes } from 'react';
 
 export default class Checkbox extends Component {
   render() {
-    const { labelText, ...other } = this.props;
-    
+    const { labelText, ...other } = this.props;    
     return (
       <div className="qc-checkbox">
         <input

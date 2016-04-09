@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+
 import Field from './Field.jsx';
-import Checkbox from './Checkbox.jsx';
+import Switch from './Switch.jsx';
+import Button from './Button.jsx';
+
 
 
 export default class SearchField extends Component {
-  onClick() {
-     Meteor.call('github.find', 'Oaxaca');
+  onChangeSwitch(switchComponent) {
+    console.log(arguments);
+     this.props.onChange(this, {});
   }
 
   render() {
@@ -13,9 +17,13 @@ export default class SearchField extends Component {
       <div className='qc-search-field'>
         <Field  placeHolder="JS, JAVA, HTML ..." labelText= "Search" type="search"/>
         <section>
-          <Checkbox labelText= "Near my location" defaultChecked={false} onClick={this.onClick.bind(this)}/>
+          <Switch ref="location" onChange={this.onChangeSwitch.bind(this)} defaultChecked={true}/>
+          <Button text="Search" type="action" />
         </section>
       </div>
     );
   }
 }
+SearchField.propTypes = {
+  onChange: PropTypes.func.isRequired
+};

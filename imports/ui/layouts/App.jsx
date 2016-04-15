@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 /* Import components*/
-import Header from './Header.jsx';
-import Legend from './Legend.jsx';
-import SearchField from './components/SearchField.jsx';
-import Button from './components/Button.jsx';
-import Coders from './Coders.jsx';
-import Footer from './Footer.jsx';
+import Header from '../Header.jsx';
+import Legend from '../Legend.jsx';
+import SearchField from '../components/SearchField.jsx';
+import Button from '../components/Button.jsx';
+import Coders from '../Coders.jsx';
+import Footer from '../Footer.jsx';
 
 // App component - represents the whole app
 export default class App extends Component {
@@ -28,7 +28,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <main className="container">
         <Header/>
         <Legend/>
         <SearchField onSearch={this.searchForCoders.bind(this)}/>
@@ -38,7 +38,7 @@ export default class App extends Component {
           <Button text="GO PRO" onClick={this.goToPay}/>
         </section>
         <Footer/>
-      </div>
+      </main>
     );
   }
 }

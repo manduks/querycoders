@@ -11,17 +11,17 @@ export default class Login extends Component {
   }
   render() {
     return (
-        <section className="qc-sessions">
+        <form className="qc-sessions">
           <Legend/>
         <div className="qc-sessions-fields">
           <Field  placeHolder="" labelText= "Email"/>
-          <Field  placeHolder="" labelText= "Password"/>
+          <Field  placeHolder="" labelText= "Password" fieldType="password"/>
         </div>
         <div className="qc-sessions-action">
-          <Button text="GO"/>
+          <input className="qc-button" type="submit" value="GO"/>
         </div>
         <span className="qc-sessions-action-text" onClick={this.goSignUp}>Create account</span>
-        </section>
+        </form>
     )
   }
 }

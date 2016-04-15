@@ -5,8 +5,6 @@ Meteor.methods({
         "User-Agent": "manduks"
       }
     });
-    console.log(result.content)
-    console.log(result.data)
     return result.data;
   }
 });

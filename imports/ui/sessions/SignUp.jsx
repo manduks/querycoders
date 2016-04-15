@@ -9,20 +9,42 @@ export default class SignUp extends Component {
   goSignIp() {
     browserHistory.push('/signin');
   }
+  onSubmitForm (event) {
+    event.preventDefault();
+    const email = this.refs.email.getValue(),
+    password = this.refs.password.getValue();
+
+    Accounts.createUser({
+      email: email,
+      password: password
+    }, function () {
+       console.log('User created');
+    });
+  }
+  validatePassword(){
+    const confirmPasswordField = this.refs.confirmPassword.refs.field,
+          passwordField = this.refs.password;
+
+    if (passwordField.getValue() !== confirmPasswordField.value) {
+      confirmPasswordField.setCustomValidity("Passwords Don't Match");
+    } else {
+      confirmPasswordField.setCustomValidity('');
+    }
+  }
   render() {
     return (
-        <section className="qc-sessions">
+        <form className="qc-sessions" onSubmit={this.onSubmitForm.bind(this)}>
           <Legend/>
         <div className="qc-sessions-fields">
-          <Field  placeHolder="" labelText= "Email"/>
-          <Field  placeHolder="" labelText= "Password"/>
-          <Field  placeHolder="" labelText= "Confirm"/>
+          <Field  placeholder="Email" fieldType="email" ref="email" labelText= "Email" required={true}/>
+          <Field  placeholder="Password" ref="password" labelText= "Password" fieldType="password" onChange={this.validatePassword.bind(this)} required={true} pattern="^\S{6,}$" title="6 characters minimum"/>
+          <Field  placeholder="Confirm Password" ref="confirmPassword" labelText= "Confirm" fieldType="password" onKeyUp={this.validatePassword.bind(this)} required={true} />
         </div>
         <div className="qc-sessions-action">
-          <Button text="Create Account"/>
+          <input className="qc-button" type="submit" value="Create Account"/>
         </div>
         <span className="qc-sessions-action-text" onClick={this.goSignIp}>Already have an account?</span>
-        </section>
+        </form>
     )
   }
 }

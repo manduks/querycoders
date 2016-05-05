@@ -12,7 +12,7 @@ export default class SearchField extends Component {
   onSearch() {
     const values = {
       switchValue: this.refs.switch.state.value,
-      fieldValue : this.refs.field.state.value,
+      fieldValue : this.refs.field.getValue(),
     };
     this.setState(values);
     this.props.onSearch(this, values);

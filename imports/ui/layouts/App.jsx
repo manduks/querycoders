@@ -22,7 +22,6 @@ export default class App extends Component {
   searchForCoders(component, values) {
     const self = this;
     Meteor.call('github.find', values, function (err, data) {
-      console.log(data);
       self.setState({resultData: data.items});
     });
   }
